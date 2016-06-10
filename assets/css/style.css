@@ -1,5 +1,5 @@
-.jumbotron{
-	font-size:50px;
+h1{
+	font-size:40px;
 	text-align:center
 }
 
@@ -7,4 +7,31 @@ button{
 	margin:10px;
 	padding:5px;
 	font-size:10px;
+}
+
+.container{
+	font-size:25px;
+}
+
+.panel-heading{
+	background-color:#1d2c51;
+	color:lightblue;
+	text-align:center;
+	margin-top:5px;
+	margin:20px;
+}
+
+.panel-default{
+	background-color:#1d2c51;
+	margin:20px;
+}
+
+.panel-body{
+	color:blue;
+	margin:20px;
+}
+
+footer{
+	text-align:right;
+	color:blue;
 }
