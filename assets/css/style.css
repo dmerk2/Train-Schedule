@@ -1,0 +1,10 @@
+.jumbotron{
+	font-size:50px;
+	text-align:center
+}
+
+button{
+	margin:10px;
+	padding:5px;
+	font-size:10px;
+}
