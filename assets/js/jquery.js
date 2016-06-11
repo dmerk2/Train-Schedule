@@ -1,4 +1,4 @@
-//Capture Button Click
+//captures when submit button is pushed
 $('#addTrain').on('click', function(){
 	
 	//captures what the user inputs and stores into variables
@@ -6,8 +6,6 @@ $('#addTrain').on('click', function(){
 	var destination = $('<destination').val();
 	var militaryTime = $('militaryTime').val();
 	var nextTrain = $('<nextTrain>').val();
-
-	console.log(train, destination, militaryTime, nextTrain)
 
 	//outputs all the info into the HTML
 	$('#trainDisplay').html(train);
@@ -20,7 +18,6 @@ $('#addTrain').on('click', function(){
 	localStorage.setItem('destination', destination);
 	localStorage.setItem('militaryTime', militaryTime);
 	localStorage.setItem('nextTrain', nextTrain);
-
 
 	return false;
 });
