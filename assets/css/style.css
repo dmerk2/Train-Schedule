@@ -14,15 +14,12 @@ button{
 }
 
 .panel-heading{
-	background-color:#1d2c51;
-	color:lightblue;
 	text-align:center;
 	margin-top:5px;
 	margin:20px;
 }
 
 .panel-default{
-	background-color:#1d2c51;
 	margin:20px;
 }
 
