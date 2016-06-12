@@ -1,29 +1,61 @@
-//captures when submit button is pushed
-$('#addTrain').on('click', function(){
+	//creating firebase connection
+	var url = 'https://sanfrantrainschedule.firebaseio.com/';
+	var dataRef = new Firebase("https://sanfrantrainschedule.firebaseio.com/");	
 	
+	var train = '';
+	var destination = '';
+	var militaryTime = '';
+	var nextTrain = '';
+
+	//captures when submit button is pushed
+	$('#addTrain').on('click', function(){ 
+
 	//captures what the user inputs and stores into variables
-	var train = $('<train>').val();
-	var destination = $('<destination').val();
-	var militaryTime = $('militaryTime').val();
-	var nextTrain = $('<nextTrain>').val();
+	train = $('#trainInput').val().trim();
+	destination = $('#destinationInput').val().trim();
+	militaryTime = $('#militaryTimeInput').val().trim();
+	nextTrain = $('#nextTrainInput').val().trim(;)
 
-	//outputs all the info into the HTML
-	$('#trainDisplay').html(train);
-	$('#destinationDisplay').html(destination);
-	$('#militaryTimeDisplay').html(militaryTime);
-	$('#nextTrainDisplay').html(nextTrain)
+	// Code for handling the push
+	dataRef.push({
+		train: train,
+		destination: destination,
+		militaryTime: militaryTime,
+		nextTrain: nextTrain
+	})
 
-	//saving to localStorage
-	localStorage.setItem('train', train);
-	localStorage.setItem('destination', destination);
-	localStorage.setItem('militaryTime', militaryTime);
-	localStorage.setItem('nextTrain', nextTrain);
-
+	// Don't refresh the page!
 	return false;
 });
 
-//Shows whats saved to local storage
-$("#trainDisplay").html(localStorage.getItem('train'));
-$("#destinationDisplay").html(localStorage.getItem("destination"));
-$("#militaryTimeDisplay").html(localStorage.getItem('militaryTime'));
-$('#nextTrainDisplay').html(localStorage.getItem('nextTrain'));
+//Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
+dataRef.on("child_added", function(childSnapshot) {
+
+	// Log everything that's coming out of snapshot
+	console.log(Childsnapshot.val().train);
+	console.log(Childsnapshot.val().destination);
+	console.log(Childsnapshot.val().militaryTime);
+	console.log(Childsnapshot.val().nextTrain)
+
+
+
+
+//FULL LIST OF ITEMS TO WELL!!!
+
+
+
+
+	// Handle the errors
+}	function(errorObject){
+	console.log("Errors handled: " + errorObject.code)
+});
+
+dataRef.orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot){
+
+	// Change the HTML
+	$("#traindisplay").html(snapshot.val().train);
+	$("#destinationdisplay").html(snapshot.val().destination);
+	$("#militaryTimedisplay").html(snapshot.val().militaryTime);
+	$("#nextTraindisplay").html(snapshot.val().nextTrain);
+
+});
