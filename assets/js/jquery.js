@@ -1,3 +1,5 @@
+alert('fuck')
+
 //creating firebase connection
 var dataRef = new Firebase("https://sanfrantrainschedule.firebaseio.com/");	
 
@@ -48,7 +50,7 @@ dataRef.on("child_added", function(childSnapshot) {
 
 
 	// Handle the errors
-}	function(errorObject){
+},	function(errorObject){
 	console.log("Errors handled: " + errorObject.code)
 });
 
