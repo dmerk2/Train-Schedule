@@ -1,5 +1,3 @@
-alert('fuck')
-
 //creating firebase connection
 var dataRef = new Firebase("https://sanfrantrainschedule.firebaseio.com/");	
 
@@ -36,10 +34,10 @@ $('#addTrain').on('click', function(){
 dataRef.on("child_added", function(childSnapshot) {
 
 	// Log everything that's coming out of snapshot
-	console.log(Childsnapshot.val().train);
-	console.log(Childsnapshot.val().destination);
-	console.log(Childsnapshot.val().militaryTime);
-	console.log(Childsnapshot.val().nextTrain)
+	console.log(childSnapshot.val().train);
+	console.log(childSnapshot.val().destination);
+	console.log(childSnapshot.val().militaryTime);
+	console.log(childSnapshot.val().nextTrain)
 
 
 
