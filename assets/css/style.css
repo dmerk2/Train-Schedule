@@ -1,11 +1,17 @@
-h1{
-	text-align:center
+.jumbotron {
+	text-align: center;
+	background-color: #337ab7;
+	color: white;
 }
 
 .panel-heading{
-	text-align:center;
+	text-align: center;
+	background-color: blue;
+	color: white;
 }
 
 footer{
-	text-align:right;
+	text-align: right;
+	background-color: #337ab7;
+	color: white;
 }
