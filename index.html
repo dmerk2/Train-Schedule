@@ -33,21 +33,47 @@
   <div class="panel-heading">Train Schedule</div>
 
   <!-- Table -->
-  <table class="table">
-    
-  </table>
+<table class='striped'>
+        <thead>
+          <tr>
+              <th data-field="train">Train</th>
+              <th data-field="destination">Destination</th>
+              <th data-field="millitaryTime">Military Time</th>
+              <th data-field="nextArrival">Next Arrival</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+			<td></td>          
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
 </div>
 
     	<!-- train information -->
-		<div class="col-lg-6">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">Trains</h3>
 				</div>
 				<div class="panel-body">
 			<form role="form">
-				<div class="form-group">
-  	 		<div class="form-group"></div>
+  	 		<div class="form-group"> 
   				<label for="text">Train Name</label>
   				<input type="text" class="form-control" id="trainInput">
 	  		</div>
@@ -55,10 +81,10 @@
   				<label for="text">Destination</label>
   				<input type="destination" class="form-control" id="destinationInput">
 	  		</div>
-  			<div class="form-group"></div>
-				<label for="text">First Train (military time)</label>
-				<input type="militaryTime" class="form-control" id="militaryTimeInput">
-			</div>
+  			<div class="form-group">
+				  <label for="text">First Train (military time)</label>
+				  <input type="militaryTime" class="form-control" id="militaryTimeInput">
+        </div>			  
 	    	<div class="form-group">
   				<label for="text">Next Train Arrival Time</label>
   		 		<input type="nextTrain" class="form-control" id="nextTrainInput">
@@ -67,7 +93,7 @@
   		</form>
   	</div>
   </div>
-</div>
+
 
 <footer>		  
 	<strong>San Francisco Train Station</strong><br>

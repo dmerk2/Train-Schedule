@@ -1,28 +1,22 @@
-	//creating firebase connection
-	var url = 'https://sanfrantrainschedule.firebaseio.com/';
-	var dataRef = new Firebase("https://sanfrantrainschedule.firebaseio.com/");	
-	
-	var train = '';
-	var destination = '';
-	var militaryTime = '';
-	var nextTrain = '';
+//creating firebase connection
+var dataRef = new Firebase("https://sanfrantrainschedule.firebaseio.com/");	
 
-	//captures when submit button is pushed
-	$('#addTrain').on('click', function(){ 
+//captures when submit button is pushed
+$('#addTrain').on('click', function(){ 
 
 
 
 
-	// Code in the logic for storing and retrieving the most recent user.
+// Code in the logic for storing and retrieving the most recent user.
 
 
 
 
-	//captures what the user inputs and stores into variables
+//captures what the user inputs and stores into variables
 	train = $('#trainInput').val().trim();
 	destination = $('#destinationInput').val().trim();
 	militaryTime = $('#militaryTimeInput').val().trim();
-	nextTrain = $('#nextTrainInput').val().trim(;)
+	nextTrain = $('#nextTrainInput').val().trim();
 
 	// Code for handling the push
 	dataRef.push({
@@ -30,7 +24,7 @@
 		destination: destination,
 		militaryTime: militaryTime,
 		nextTrain: nextTrain
-	})
+	});
 
 	// Don't refresh the page!
 	return false;
