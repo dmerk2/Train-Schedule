@@ -10,6 +10,14 @@
 	//captures when submit button is pushed
 	$('#addTrain').on('click', function(){ 
 
+
+
+
+	// Code in the logic for storing and retrieving the most recent user.
+
+
+
+
 	//captures what the user inputs and stores into variables
 	train = $('#trainInput').val().trim();
 	destination = $('#destinationInput').val().trim();
