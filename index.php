@@ -1,1 +1,1 @@
-<?php include_once("firebase.html"); ?>
+<?php include_once("index.html"); ?>
