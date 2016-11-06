@@ -33,8 +33,6 @@ dataRef.on("child_added", function(childSnapshot) {
 	console.log(childSnapshot.val().nextTrain)
 
 
-
-
 // Creating variables to append user info
 var tName = childSnapshot.val().train;
 var tDestination = childSnapshot.val().destination;
@@ -42,13 +40,15 @@ var tFrequency = childSnapshot.val().militaryTime;
 var tNextTrain = childSnapshot.val().nextTrain;
 
 // Appends user info to table
-$(".table > tbody").append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" + tFrequency);
+$(".table > tbody").append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" + tFrequency + "</td><td>" + tNextTrain + "</td>");
 
-	// Change the HTML
-	$("#traindisplay").val("");
+	// Clear the HTML
+	$("#newTrain").val("");
 	$("#destinationdisplay").val("");
 	$("#militaryTimedisplay").val("");
 	$("#nextTraindisplay").val("");
+
+
 	// Handle the errors
 },	function(errorObject){
 	console.log("Errors handled: " + errorObject.code)
