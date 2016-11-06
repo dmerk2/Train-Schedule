@@ -4,14 +4,6 @@ var dataRef = new Firebase("https://sanfrantrainschedule.firebaseio.com/");
 //captures when submit button is pushed
 $('#addTrain').on('click', function(){ 
 
-
-
-
-// Code in the logic for storing and retrieving the most recent user.
-
-
-
-
 //captures what the user inputs and stores into variables
 	train = $('#trainInput').val().trim();
 	destination = $('#destinationInput').val().trim();
@@ -30,6 +22,7 @@ $('#addTrain').on('click', function(){
 	return false;
 });
 
+
 //Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
 dataRef.on("child_added", function(childSnapshot) {
 
@@ -42,11 +35,20 @@ dataRef.on("child_added", function(childSnapshot) {
 
 
 
-//FULL LIST OF ITEMS TO WELL!!!
+// Creating variables to append user info
+var tName = childSnapshot.val().train;
+var tDestination = childSnapshot.val().destination;
+var tFrequency = childSnapshot.val().militaryTime;
+var tNextTrain = childSnapshot.val().nextTrain;
 
+// Appends user info to table
+$(".table > tbody").append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" + tFrequency);
 
-
-
+	// Change the HTML
+	$("#traindisplay").val("");
+	$("#destinationdisplay").val("");
+	$("#militaryTimedisplay").val("");
+	$("#nextTraindisplay").val("");
 	// Handle the errors
 },	function(errorObject){
 	console.log("Errors handled: " + errorObject.code)
@@ -54,10 +56,6 @@ dataRef.on("child_added", function(childSnapshot) {
 
 dataRef.orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot){
 
-	// Change the HTML
-	$("#traindisplay").html(snapshot.val().train);
-	$("#destinationdisplay").html(snapshot.val().destination);
-	$("#militaryTimedisplay").html(snapshot.val().militaryTime);
-	$("#nextTraindisplay").html(snapshot.val().nextTrain);
+
 
 });
