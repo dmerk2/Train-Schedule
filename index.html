@@ -31,10 +31,11 @@
     <table class='table'>
       <thead>
         <tr>
-          <th data-field="train">Train</th>
-          <th data-field="destination">Destination</th>
-          <th data-field="millitaryTime">Military Time</th>
-          <th data-field="nextArrival">Next Arrival</th>
+          <th>Train</th>
+          <th>Destination</th>
+          <th>Military Time</th>
+          <th>Frequency (mins)</th>
+          <!-- <th>Minutes Away</th> -->
         </tr>
       </thead>
       <tbody>
@@ -50,6 +51,7 @@
 	<div class="panel-heading">
 	  <h3 class="panel-title">Trains</h3>
 	</div>
+
 	<div class="panel-body">
 		<form role="form">
 	 		<div class="form-group"> 
@@ -61,12 +63,12 @@
 				  <input type="destination" class="form-control" id="destinationInput">
   		</div>
 			<div class="form-group">
-			  <label for="text">First Train (military time)</label>
-			    <input type="militaryTime" class="form-control" id="militaryTimeInput">
+			  <label for="text">First Train Time (HH:mm - military time)</label>
+			    <input type="nextArrival" class="form-control" id="nextArrivalInput">
       </div>			  
     	<div class="form-group">
-				<label for="text">Next Train Arrival Time</label>
-		 		  <input type="nextTrain" class="form-control" id="nextTrainInput">
+				<label for="text">Frequency (mins)</label>
+		 		  <input type="frequency" class="form-control" id="frequencyInput">
 			</div>
 			  <button type="submit" class="btn btn-default" id="addTrain">Submit</button>
 		</form>
